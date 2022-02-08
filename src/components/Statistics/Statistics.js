@@ -4,7 +4,7 @@ import styles from './Statistics.module.css';
 const Statistics = function ({ title, stats }) {
   return (
     <section className="statistic">
-      {title !== undefined && <h2 className={styles.title}>{title}</h2>}
+      {title && <h2 className={styles.title}>{title}</h2>}
       <ul className={styles.list}>
         {stats.map(stat => (
           <li className={styles.item} key={stat.id}>
@@ -26,6 +26,6 @@ Statistics.propTypes = {
       id: PropTypes.string,
       label: PropTypes.string,
       percentage: PropTypes.number,
-    }),
+    })
   ),
 };
